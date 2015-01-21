@@ -1,0 +1,6 @@
+FROM trueability/dodc:task2
+MAINTAINER ops@trueability.com
+
+RUN rm -f /usr/bin/mover.sh
+ADD scripts/docker/task2-mover.sh.resolved /usr/bin/mover.sh
+RUN chmod 755 /usr/bin/mover.sh

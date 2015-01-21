@@ -1,0 +1,16 @@
+FROM debian:stable
+MAINTAINER ops@trueability.com
+
+USER root
+
+RUN apt-get update
+RUN apt-get install openssh-client -y
+RUN mkdir -p /var/lib/ta-data
+ADD tiles/2x2tile_1.png /var/lib/ta-data/piece4.png
+ADD ssh/do_challenge /var/lib/ta-data/do_challenge
+ADD scripts/docker/task4-sender.sh /usr/bin/sender.sh
+RUN chown root /var/lib/ta-data/do_challenge
+RUN chmod 600 /var/lib/ta-data/do_challenge
+RUN chmod 755 /usr/bin/sender.sh
+
+ENTRYPOINT ["timeout","-k","1m","1m","/usr/bin/sender.sh"]

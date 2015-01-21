@@ -1,0 +1,15 @@
+FROM debian:stable
+MAINTAINER ops@trueability.com
+EXPOSE 5984
+USER root
+
+RUN apt-get update
+RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install apt-utils couchdb curl -y
+ADD tiles/2x2tile_2.png /tmp/piece3.png
+ADD scripts/docker/task3-couchdb_bootstrap.sh /tmp/couchdb_bootstrap.sh
+ADD scripts/docker/task3-couchdb.ini /etc/couchdb/local.d/couchdb_for_all.ini
+RUN chmod 755 /tmp/couchdb_bootstrap.sh
+RUN /tmp/couchdb_bootstrap.sh
+
+ENTRYPOINT ["/usr/bin/couchdb"]

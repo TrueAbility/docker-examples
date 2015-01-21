@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -d trueability/dodc:task3_db
+docker run -d trueability/dodc:task3_web
