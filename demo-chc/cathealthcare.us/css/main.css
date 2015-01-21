@@ -1,0 +1,117 @@
+/* Main CSS */
+body {
+    background: #e1e1e1;
+}
+#primary-nav {
+    background: #fff;
+    margin-bottom: 0;
+    background:#fff;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border-radius: 0;
+    border:0;
+}
+#primary-nav a {
+    font-size:20px;
+
+}
+#primary-nav a.navbar-brand {
+    font-size:34px;
+    color:#046792;
+    font-weight: 500;
+    margin-right:90px;
+}
+#primary-nav a.navbar-brand span {
+    color:#444;
+}
+#primary-nav a.navbar-brand span.domain {
+    font-weight: 300;
+}
+#primary-nav ul.navbar-nav a {
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding:18px 30px;
+}
+#secondary-nav {
+    margin-top:0;
+    background:#046792;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border-radius:0;
+    border:0;
+    border-bottom: 3px solid #17648a;
+    height:70px;
+    margin-bottom: 0;
+}
+#secondary-nav ul.nav {
+    margin-left:-5px;
+    margin-top:10px;
+}
+#secondary-nav a {
+    color:#fff;
+    color:rgba(255, 255, 255, .8);
+    font-size: 18px;
+    padding:8px 20px;
+    letter-spacing: 1px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius: 4px;
+}
+#secondary-nav a:hover {
+    background:#fff;
+    color:#17648a;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    background:#046792;
+    color:#fff;
+}
+
+#third-nav {
+    background: #1d7cab;
+    color:#fff;
+    border:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+    border-radius: 0;
+    padding:10px 0;
+    margin:0;
+    min-height: 30px;
+    height:30px;
+}
+#third-nav p {
+    font-weight: 100;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 12px;
+
+}
+
+.jumbotron {
+    background:url(../images/cat-aww.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.jumbotron:before {
+    background:rgba(0, 0, 0, .3);
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    content:'';
+}
+.jumbotron .pull-right {
+    text-align: right;
+    width:50%;
+    position: relative;
+    z-index: 2;
+    color:#fff;
+}
+.jumbotron h1 {
+    font-family: 'Bitter', serif;
+    font-weight: normal;
+}
+.jumbotron .btn {
+    background: #d37c01;
+    border:0;
+}

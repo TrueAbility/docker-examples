@@ -1,0 +1,9 @@
+FROM debian:stable
+MAINTAINER ops@trueability.com
+
+RUN mkdir -p /var/lib/ta-data
+ADD tiles/2x2tile_0.png /var/lib/ta-data/piece2.png
+ADD scripts/docker/task2-mover.sh /usr/bin/mover.sh
+RUN chmod 755 /usr/bin/mover.sh
+
+ENTRYPOINT usr/bin/mover.sh

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# need the host dir to be writable by doftw on the docker instance
+chmod 777 /var/ta/task4
+
+# just to make sure that we're clear
+docker rm -f rcv snd > /dev/null 2>&1 ||:
+
+# start the receiver first since it ought to be daemonizing
+docker run -d --name rcv -v /var/ta/task4:/data trueability/dodc:task4-rcv
+
+# and we run the one-shot task to send the file
+docker run --name snd --link rcv:rcv trueability/dodc:task4-snd

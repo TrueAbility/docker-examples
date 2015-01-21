@@ -1,0 +1,9 @@
+FROM debian:stable
+MAINTAINER ops@trueability.com
+
+RUN apt-get update
+RUN apt-get install python python-couchdb -y
+ADD scripts/docker/task3-web.py /usr/local/bin/server.py
+RUN chmod 0755 /usr/local/bin/server.py
+
+ENTRYPOINT ["/usr/local/bin/server.py"]

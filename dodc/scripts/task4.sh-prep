@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# just to make sure that we're clear
+docker stop trueability/dodc:task4-rcv ||:
+
+# start the receiver first since it ought to be daemonizing
+docker run trueability/dodc:task4-rcv
+
+# and we run the one-shot task to send the file
+docker run trueability/dodc:task4-snd

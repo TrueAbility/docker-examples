@@ -1,0 +1,15 @@
+FROM debian:stable
+MAINTAINER ops@trueability.com
+
+USER root
+
+RUN apt-get update
+RUN apt-get install openssh-server -y
+RUN useradd doftw -m -d /home/doftw
+RUN mkdir -p /var/run/sshd /home/doftw/.ssh /data
+ADD ssh/do_challenge.pub /home/doftw/.ssh/authorized_keys
+RUN chown -R doftw:doftw /home/doftw/.ssh /data
+RUN chmod 0700 /home/doftw/.ssh
+RUN chown doftw:doftw /data
+
+ENTRYPOINT ["/usr/sbin/sshd","-D"]

@@ -1,0 +1,3 @@
+#!/bin/bash
+[ -d /var/ta/task1 ] || mkdir -p /var/ta/task1
+docker run -v /var/ta/task1:/data trueability/dodc:task1
